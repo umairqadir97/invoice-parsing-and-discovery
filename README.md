@@ -9,7 +9,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-    <img src="reports/invoices-logo.jpg" alt="Logo" width="356" height="256">
+    <img src="reports/invoices-logo.jpg" alt="Logo" width="512" height="256">
   </a>
 
   <h3 align="center">Invoices Parsing & Discovery</h3>
