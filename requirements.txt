@@ -1,0 +1,9 @@
+numpy
+pandas
+flask
+requests
+pdfquery
+tabula-py
+json2html
+fuzzywuzzy
+tabula-py

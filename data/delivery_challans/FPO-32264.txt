@@ -1,0 +1,121 @@
+﻿                          POWERTRONICS
+
+                           ENERGY SYSTEMS
+
+Packing List
+
+    DATE        Ref No.    
+1st Feb 2019 PES-FFL-055PL 
+229-7025, Tomken Road
+
+Mississauga ON L5S 1R6
+
+Tel: 416-508-8730 Fax: 905-502-0753
+
+Issued To:
+
+Fatima Fertilizer Company Limited
+
+E-110, Khayaban-e-Jinnah, Cantt., Lahore, Pakistan
+
+Ph: +92 42-35909668
+
+PO No     Incoterms                        Payment terms                       Shipping date        Customer ID   
+32264 CPT Lahore Airport          Against LC No. 0001LC25700/2019                2019-02-05             USD       
+S. No                             Description                              Qty Ordered Qty Shipped Extended Price 
+  1   CVS Series "ET" Control Valve, 6" 600# RF,                                1           1            EA       
+      667-70 ATO/Fail CLOSED actuator, 6-30 psi. signal                                                           
+      Bench Set @ 7-30 psi                                                                                        
+      1008/70 Handwheel Actuator, Top Mounted, PDTC.                                                              
+      316SST/Alloy 6 Plug, Alloy 6 Seat, 17-4 1150 DHT Cage, PTFE Packing                                         
+      Trim: 5-3/8" Whisper III/B3 port. Linear - 3" Travel                                                        
+      LCC Body.                                                                                                   
+      SST Tag: PCV-002                                                                                            
+      C/W CVS Series ALP-1200L Pneumatic Valve Positioner                                                         
+      6-30 psi Input, 6-30 psi Output. C/W mounting to above valve.                                               
+      C/W CVS 67CFR Airset Filter Regulator & mounting to above Valve                                             
+  2   CVS Series 4150 pressure controller, 6-30 psi. output,                    1           1            EA       
+      0-1500 psi, Reverse, SST Bellows.                                                                           
+      C/W CVS 67CFR Air Set Regulator, and mounting to the above valve                                            
+      Sour Process, Sweet instrument supply                                                                       
+      SST Tag: PIC-002                                                                                            
+  3   CVS Series 670 Manual Loading Station                                     2           2            EA       
+      C/W (Two) 0-60 psi Gauges, 3-Way Change-Over Valve                                                          
+      and Regulator. Standard Service                                                                             
+  4   Filter Strainer at inlet                                                  1           1            EA       
+ 4a   360AFI-l/4'-70C                                                           2           2            EA       
+      -Aluminum Filter Assembly '-1/4" NPT Ports                                                                  
+      '-250 PSI Max Pressure                                                                                      
+      -w/ DPI Indicator installed C44                                                                             
+      '-w/Auto Float Drain Installed                                                                              
+      '-w/25-64-50C Disposable Coalescing Filter Element Installed                                                
+      '-99.99% efficient at .01 micron                                                                            
+      122                                                                                                         
+      -    Stainless Steel Housing filter                                                                         
+      -1/4" NPT Ports                                                                                             
+      -    5000 PSI Max Pressure                                                                                  
+      **Filter Element Sold Separately                                                                            
+  5   12-57-50C                                                                 6           6            EA       
+      Disposable Coalescing Filter Element                                                                        
+      - 99.99% efficient at 0.01 micron                                                                           
+  6   FD130                                                                     3           3            EA       
+      -External Stainless steel Float Drain                                                                       
+      **w/ Plastic Internals Max Pressure 250 PSI                                                                 
+      PCV 002 Spares:                                                           1           1            EA       
+  7   Repair Kit for 667-70 Actuator                                                                              
+      Part# CVSR667X000702                                                                                        
+  8   Diaphragm for 667-70                                                      1           1            EA       
+      Part# CVS2N130902202                                                                                        
+  9   CVS 6" ET W3B3 Alloy 6 Trim Kit (Whisper Trim)                            1           1            EA       
+      Part# CTK6-C3/0885                                                                                          
+ 10   CVS Series ALP-1200L Pneumatic Valve Positioner,                          1           1            EA       
+      6-30 psi Input, 6-30 psi Output. C/W mounting to above valve.                                               
+      C/W CVS 67CFR Airset Filter Regulator & mounting to above Valve.                                            
+1/2
+                          POWERTRONICS
+
+                           ENERGY SYSTEMS
+
+229-7025, Tomken Road
+
+Mississauga ON L5S 1R6
+
+Tel: 416-508-8730 Fax: 905-502-0753
+
+Packing List
+
+    DATE        Inv No     
+1st Feb 2019 PES-FFL-055PL 
+Shipped to:
+
+Fatima Fertilizer Company Limited
+
+E-110, Khayaban-e-Jinnah, Cantt., Lahore, Pakistan
+
+Ph: +92 42-35909668
+
+PO No     Incoterms               Payment terms          Shipping date Customer ID 
+32264 CPT Lahore Airport Against LC No. 0001LC25700/2019  2019-02-05       USD     
+S. No                           Description                            Quantity (EA) Unit price Extended Price 
+      PIC 002 Spares:                                                                                          
+ 11   CVS 4150 Repair Kit-Major                                              1           1            EA       
+      Part# R4150MAJ                                                                                           
+ 12   CVS 67CFR Regulator Repair Kit                                         1           1            EA       
+      Part# CVS67CFR-RK                                                                                        
+ 13   CVS Series 4150 pressure controller, 6-30 psi. output,                                          EA       
+      0-1500 psi. Reverse, SST Bellows.                                      1           1                     
+      C/W CVS 67CFR Air Set Regulator, and mounting to the above valve                                         
+      Sour Process, Sweet instrument supply (Recomm                                                            
+      Dimensions: 80in x 48in x 36in                                                                           
+      Weight: 1228 Lbs                                                                                         
+      LC No: 0001LC25700/2019                                                                                  
+      Date of issue: 2019-01-18                                                                                
+      Issuing Bank: BANK AL HABIB LIMITED PAKISTAN                                                             
+      HS Code: 8479.9090                                                                                       
+      Country of Origin: Canada                                                                                
+      DESCRIPTION OF GOODS: SPARE PARTS FOR FERTILIZER PLANT                                                   
+      PLANT. FURTHER DETAILS ARE STRICTLY AS PER PROFORMA                                                      
+      INVOICE NO. PES-FFL-055 DATED DECEMBER 28, 2018                                                          
+      We Certify that all Merchandize is of Canada origin                                                      
+      CPT LAHORE PAKISTAN - (INCOTERMS : 2010)                                                                 
+2/2

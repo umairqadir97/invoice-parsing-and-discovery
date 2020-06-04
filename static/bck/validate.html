@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/img/favicon.ico') }}">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>RB-Knitter</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="{{ url_for('static', filename='assets/css/animate.min.css') }}" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="{{ url_for('static', filename='assets/css/light-bootstrap-dashboard.css', v='1.4.0') }}" rel="stylesheet"/>
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='assets/css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        function removeRow(id, para_id, elemId){
+            var toggle = 2
+            if (elemId == "btn_up_" + para_id) {
+                if (!$("#btn_up_" + para_id).hasClass("btn-primary-locked")) {
+                    toggle = 1
+                }
+            } else {
+                if (!$("#btn_down_" + para_id).hasClass("btn-primary-locked")) {
+                    toggle = 0
+                }
+            }
+            $.ajax({
+                url:'/set_status/' + id + '/' + para_id + '/' + toggle,
+                method: 'GET',
+                processData: true
+            }).done(function(){
+                if (toggle == 1){
+                    $("#btn_up_" + para_id).removeClass("btn-primary")
+                    $("#btn_up_" + para_id).removeClass("btn-primary-locked")
+                    $("#btn_down_" + para_id).removeClass("btn-primary")
+                    $("#btn_down_" + para_id).removeClass("btn-primary-locked")
+
+                    $("#btn_up_" + para_id).removeClass("btn-primary")
+                    $("#btn_up_" + para_id).addClass("btn-primary-locked")
+                    $("#btn_down_" + para_id).addClass("btn-primary")
+                    $("#btn_down_" + para_id).removeClass("btn-primary-locked")
+                } else if (toggle == 0) {
+                    $("#btn_up_" + para_id).removeClass("btn-primary")
+                    $("#btn_up_" + para_id).removeClass("btn-primary-locked")
+                    $("#btn_down_" + para_id).removeClass("btn-primary")
+                    $("#btn_down_" + para_id).removeClass("btn-primary-locked")
+
+                    $("#btn_up_" + para_id).addClass("btn-primary")
+                    $("#btn_up_" + para_id).removeClass("btn-primary-locked")
+                    $("#btn_down_" + para_id).removeClass("btn-primary")
+                    $("#btn_down_" + para_id).addClass("btn-primary-locked")
+                } else {
+                    $("#btn_up_" + para_id).removeClass("btn-primary")
+                    $("#btn_up_" + para_id).removeClass("btn-primary-locked")
+                    $("#btn_down_" + para_id).removeClass("btn-primary")
+                    $("#btn_down_" + para_id).removeClass("btn-primary-locked")
+
+                    $("#btn_up_" + para_id).addClass("btn-primary")
+                    $("#btn_down_" + para_id).addClass("btn-primary")
+                }
+            }).fail(function(xhr, status){
+                console.log(xhr);
+                alert('Internal Server Error');
+            })
+        }
+
+        function setDoc(id, elemId){
+            var toggle = 2
+            if (elemId == "btn_up_all") {
+                if (!$("#btn_up_all").hasClass("btn-primary-locked")) {
+                    toggle = 1
+                }
+            } else {
+                if (!$("#btn_down_all").hasClass("btn-primary-locked")) {
+                    toggle = 0
+                }
+            }
+            $.ajax({
+                url:'/set_all/' + id + '/' + toggle,
+                method: 'GET',
+                processData: false
+            }).done(function(){
+                if (toggle == 1){
+                    $("#btn_up_all").removeClass("btn-primary")
+                    $("#btn_up_all").removeClass("btn-primary-locked")
+                    $("#btn_down_all").removeClass("btn-primary")
+                    $("#btn_down_all").removeClass("btn-primary-locked")
+
+                    $("#btn_up_all").removeClass("btn-primary")
+                    $("#btn_up_all").addClass("btn-primary-locked")
+                    $("#btn_down_all").addClass("btn-primary")
+                    $("#btn_down_all").removeClass("btn-primary-locked")
+
+                    $(".mybtn-down").removeClass("btn-primary-locked")
+                    $(".mybtn-down").addClass("btn-primary")
+
+                    $(".mybtn-up").removeClass("btn-primary")
+                    $(".mybtn-up").addClass("btn-primary-locked")
+                } else if (toggle == 0) {
+                    $("#btn_up_all").removeClass("btn-primary")
+                    $("#btn_up_all").removeClass("btn-primary-locked")
+                    $("#btn_down_all").removeClass("btn-primary")
+                    $("#btn_down_all").removeClass("btn-primary-locked")
+
+                    $("#btn_up_all").addClass("btn-primary")
+                    $("#btn_up_all").removeClass("btn-primary-locked")
+                    $("#btn_down_all").removeClass("btn-primary")
+                    $("#btn_down_all").addClass("btn-primary-locked")
+
+                    $(".mybtn-up").removeClass("btn-primary-locked")
+                    $(".mybtn-up").addClass("btn-primary")
+
+                    $(".mybtn-down").removeClass("btn-primary")
+                    $(".mybtn-down").addClass("btn-primary-locked")
+                } else {
+                    $("#btn_up_all").removeClass("btn-primary")
+                    $("#btn_up_all").removeClass("btn-primary-locked")
+                    $("#btn_down_all").removeClass("btn-primary")
+                    $("#btn_down_all").removeClass("btn-primary-locked")
+
+                    $("#btn_up_all").addClass("btn-primary")
+                    $("#btn_down_all").addClass("btn-primary")
+
+                    $(".my-btn").removeClass("btn-primary-locked")
+                    $(".my-btn").removeClass("btn-primary")
+                    $(".my-btn").addClass("btn-primary")
+                }
+            }).fail(function(xhr, status){
+                console.log(xhr);
+                alert('Internal Server Error');
+            })
+        }
+
+    </script>
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="{{ url_for('static', filename='assets/img/sidebar-2.jpg') }}">
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="/validate" class="simple-text" style="font-size:medium">
+                    RB-Segmentation
+                </a>
+            </div>
+            {% for d in doc_data.fileNames %}
+                <ul class="nav">
+                    {% if doc_data.currId == d.id %}
+                        <li class="active">
+                            <a href="/validate/{{d.id}}">
+                                <i class="pe-7s-up-arrow"></i>
+                                <p class="simple-text" style="font-size:small;  word-wrap: break-word;">{{d.name}}</p>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="">
+                            <a href="/validate/{{d.id}}">
+                                <i class="pe-7s-note2"></i>
+                                <p class="simple-text" style="font-size:small;  word-wrap: break-word;">{{d.name}}</p>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            {% endfor %}
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Segmentation Validation</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <!-- <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-dashboard"></i>
+                            </a>
+                        </li>
+                    </ul> -->
+
+                    <!-- <ul class="nav navbar-nav navbar-right">
+                        <li>
+                           <a href="">
+                               Account
+                            </a>
+                        </li>
+                    </ul> -->
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                {% if doc_data.currId != -1 %}
+                    <div class="doc_title" id="doc">
+                         <table class="tbody">
+                             <tr class="tr">
+                                 <div class="td col-sm-10">
+                                     <h2>{{doc_data.currId[:-5]}}</h2>
+                                 </div>
+                                 <div class="td col-sm-2">
+                                     {% if doc_data.docStatus == 2 %}
+                                        <button class="pull-right btn btn-primary glyphicon glyphicon-thumbs-down" style="font-size:medium" id="btn_down_all" onclick="setDoc('{{doc_data.currId}}', this.id)"></button>
+                                        <button class="pull-right btn btn-primary glyphicon glyphicon-thumbs-up" style="font-size:medium" id="btn_up_all" onclick="setDoc('{{doc_data.currId}}', this.id)"></button>
+                                     {% elif doc_data.docStatus == 1 %}
+                                        <button class="pull-right btn btn-primary glyphicon glyphicon-thumbs-down" style="font-size:medium" id="btn_down_all" onclick="setDoc('{{doc_data.currId}}', this.id)"></button>
+                                        <button class="pull-right btn btn-primary-locked glyphicon glyphicon-thumbs-up" style="font-size:medium" id="btn_up_all" onclick="setDoc('{{doc_data.currId}}', this.id)"></button>
+                                     {% else %}
+                                        <button class="pull-right btn btn-primary-locked glyphicon glyphicon-thumbs-down" style="font-size:medium" id="btn_down_all" onclick="setDoc('{{doc_data.currId}}', this.id)"></button>
+                                        <button class="pull-right btn btn-primary glyphicon glyphicon-thumbs-up" style="font-size:medium" id="btn_up_all" onclick="setDoc('{{doc_data.currId}}', this.id)"></button>
+                                     {% endif %}
+                                 </div>
+                             </tr>
+                         </table>
+                    </div>
+                    <br>
+                    <div class="paras" id="segments">
+                        <!--<form action="/matcher_ui_handler" method="post" enctype="multipart/form-data">-->
+                            <!--Select File: <input type="file" name="data_file" /> <br>-->
+                            <!--<input type="submit" />-->
+                        <!--</form>-->
+                        <table class="table tbody">
+                        {% for p in doc_data.fileData%}
+                            <tr class="tr">
+                                <td class="td">
+                                    {% autoescape false %}
+                                        <p class="text" id="text_{{p.id}}">{{ p.text | replace("\r\n", "<br/>") }}</p>
+                                    {% endautoescape %}
+
+                                </td>
+                                <td class="td">
+                                    {% if p.to_remove == 2 %}
+                                        <button class="my-btn mybtn-up btn btn-primary glyphicon glyphicon-thumbs-up" style="font-size:medium" id="btn_up_{{p.id}}" onclick="removeRow('{{doc_data.currId}}', '{{p.id}}', this.id)">
+                                        </button>
+                                        <button class="my-btn mybtn-down btn btn-primary glyphicon glyphicon-thumbs-down" style="font-size:medium" id="btn_down_{{p.id}}" onclick="removeRow('{{doc_data.currId}}','{{p.id}}', this.id)">
+                                        </button>
+                                    {% elif p.to_remove == 0 %}
+                                        <button class="my-btn mybtn-up btn btn-primary glyphicon glyphicon-thumbs-up" style="font-size:medium" id="btn_up_{{p.id}}" onclick="removeRow('{{doc_data.currId}}', '{{p.id}}', this.id)">
+                                        </button>
+                                        <button class="my-btn mybtn-down btn btn-primary-locked glyphicon glyphicon-thumbs-down" style="font-size:medium" id="btn_down_{{p.id}}" onclick="removeRow('{{doc_data.currId}}','{{p.id}}', this.id)">
+                                        </button>
+                                    {% else %}
+                                        <button class="my-btn mybtn-up btn btn-primary-locked glyphicon glyphicon-thumbs-up" style="font-size:medium" id="btn_up_{{p.id}}" onclick="removeRow('{{doc_data.currId}}','{{p.id}}', this.id)">
+                                        </button>
+                                        <button class="my-btn mybtn-down btn btn-primary glyphicon glyphicon-thumbs-down" style="font-size:medium" id="btn_down_{{p.id}}" onclick="removeRow('{{doc_data.currId}}','{{p.id}}', this.id)">
+                                        </button>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+
+        <footer class="footer">
+            <!-- <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="#"
+                </p>
+            </div> -->
+        </footer>
+
+    </div>
+</div>
+
+
+</body>
+
+    <!--   Core JS Files   -->
+    <script src="{{ url_for('static', filename='assets/js/jquery.3.2.1.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
+
+	<!--  Charts Plugin -->
+	<script src="{{ url_for('static', filename='assets/js/chartist.min.js') }}"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="{{ url_for('static', filename='assets/js/bootstrap-notify.js') }}"></script>
+
+    <!--&lt;!&ndash; Light Bootstrap Table Core javascript and methods for Demo purpose &ndash;&gt;-->
+	<!--<script src="{{ url_for('static', filename='assets/css/light-bootstrap-dashboard.js', v='1.4.0') }}" type="text/javascript"></script>-->
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="{{ url_for('static', filename='assets/js/demo.js') }}"></script>
+
+
+</html>

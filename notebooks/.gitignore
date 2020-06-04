@@ -1,0 +1,10 @@
+.coverage
+env/*
+*.log
+.idea/*
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyc
+venv/*
+notebooks/.ipynb_checkpoints

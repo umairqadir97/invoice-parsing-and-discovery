@@ -1,0 +1,118 @@
+﻿
+                BILL / SALES TAX INVOICE
+
+
+
+
+Invoice No.  679/18-19
+Invoice Date 22-Apr-19
+
+Attn : Mr. Fahad Ajmal
+
+Buyer - E & I - Supply Chain Function
+Fatima Fertilizer Company Limited.,
+3rd Floor, 35-A, Empress Road,
+LAHORE
+
+Phone #042-35909668
+
+STRN # 04-909999-679-28
+
+NTN # 1791532-5
+
+
+SUPPLIER:
+
+ABGURT PVT LTD.
+
+408, 4th Floor, Amber Estate Building,
+
+Block 7 & 8, K.C.H.S., Sharah-e-Faisal,
+
+Karachi - 75350
+
+Ph # 021-34548050-51-52, Fax # 021-34386660
+STRN # 12-20-9999-968-46, NTN # 0912781-0
+Bank Name: Habib Bank Ltd. S.M. Rd. Branch
+Bank Account # : 05990046085403
+
+Purchase Order No. LPO-33436
+Purchase Order Dt. 20-Feb-19
+Delivery Challan No.   1660   
+Delivery Challan Dt. 28-Mar-19
+Receiving Report No.   49454  
+Receiving Report Dt. 18-Apr-19
+S.NO.        Description        Qty. Unit Price Value Excl. Sales Sales Tax Value Ind. Sales
+                                                       Tax          @ 17%         Tax       
+                                         Rs            Rs            Rs            Rs       
+  1   Seamless Tubing            10   1,230.00      12,300.00     2,091.00     14,391.00    
+      Size : 12 mm OD                                                                       
+  2   Male Connector             5    1,125.00      5,625.00       956.25       6,581.25    
+      Size : 8 mm ODx 1/2" NPTM                                                             
+      Description Code : 73-a                       17,925.00     3,047.25     20,972.25    
+                                                                     TOTAL     20,972.25    
+                                                                   FREIGHT        0.00      
+                                                               GRAND TOTAL       20,972     
+
+For: A
+
+                BILL / SALES TAX INVOICE
+
+
+
+
+Invoice No.  679/18-19
+Invoice Date 22-Apr-19
+
+Attn : Mr. Fahad Ajmal
+
+Buyer - E & I - Supply Chain Function
+Fatima Fertilizer Company Limited.,
+3rd Floor, 35-A, Empress Road,
+LAHORE
+
+Phone # 042-35909668
+
+STRN # 04-909999-679-28
+
+NTN # 1791532-5
+
+Purchase Order No. LPO-33436
+Purchase Order Dt. 20-Feb-19
+
+                       SUPPLIER:
+
+                       ABGURT PVT LTD.
+
+                       408, 4th Floor, Amber Estate Building,
+
+                       Block 7 & 8, K.C.H.S., Sharah-e-Faisal,
+
+                       Karachi - 75350
+
+                       Ph # 021-34548050-51-52, Fax # 021-34386660
+                       STRN # 12-20-9999-968-46, NTN # 0912781-0
+                       Bank Name: Habib Bank Ltd. S.M. Rd. Branch
+                       Bank Account # : 05990046085403
+
+
+Delivery Challan No.   1660   
+Delivery Challan Dt. 28-Mar-19
+Receiving Report No.   49454  
+Receiving Report Dt. 18-Apr-19
+S.NO.        Description         Qty. Unit Price Value Excl. Sales Sales Tax Value Ind. Sales
+                                                        Tax          @ 17%         Tax       
+                                          Rs            Rs            Rs            Rs       
+  1   Seamless Tubing             10   1,230.00      12,300.00     2,091.00     14,391.00    
+      Size : 12 mm OD                                                                        
+  2   Male Connector              5    1,125.00      5,625.00       956.25       6,581.25    
+      Size : 8 mm OD x 1/2" NPTM                                                             
+      Description Code : 73-a                        17,925.00     3,047.25     20,972.25    
+                                                                      TOTAL     20,972.25    
+                                                                    FREIGHT        0.00      
+                                                                GRAND TOTAL       20,972     
+
+For: Al
+
+
+D.

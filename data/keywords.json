@@ -1,0 +1,102 @@
+{
+  "generic": {
+    "billing_addr": [
+      "BILL TO",
+      "Issued To",
+      "Customer Details",
+      "To"
+    ],
+    "invoice_num": [
+      "Invoice No.",
+      "Inv No",
+      "Proforma Invoice no."
+    ],
+    "invoice_date": [
+      "Invoice Date",
+      "Shipping date",
+      "Date"
+    ],
+    "order_no": [
+      "Order No."
+    ],
+    "order_date": [
+      "Order Date",
+      "dated"
+    ],
+    "purchase_order": [
+      "Ref.",
+      "PO No",
+      "p.o no",
+      "Order No",
+      "Purchase order no",
+      "CUSTOMER REFERENCE NO.",
+      "P.O. Reference",
+      "P.O",
+      "no",
+      "purchase order #"
+    ],
+    "product_desc": [
+      "Product Description",
+      "Description",
+      "Description of goods",
+      "PARTICULARS"
+    ],
+    "total_amount" : ["Total Firm & Fixed", "Total"]
+  },
+  "description_table": {
+    "s_no": [
+      "S. No.",
+      "N",
+      "ITEM",
+      "Sr #"
+    ],
+    "quantity": [
+      "Quantity",
+      "Qty",
+      "Quantity (EA)"
+    ],
+    "concentration": [
+      "Concentration %"
+    ],
+    "rate": [
+      "Rate (Per Ton)",
+      "Unit price"
+    ],
+    "amount": [
+      "Amount",
+      "Extended Price",
+      "Amount(USD)",
+      "Total Price",
+      "NET PRICE"
+    ],
+    "description": [
+      "Product Description",
+      "Description",
+      "Description of goods",
+      "PARTICULARS"
+    ],
+    "part": [
+      "PART"
+    ],
+    "U/M": [
+      "U/M",
+      "y/M",
+      "UOM"
+    ],
+    "ordered": [
+      "ORDERED"
+    ],
+    "b/o": [
+      "B/O"
+    ],
+    "shipping_date": [
+      "SHIPPED"
+    ],
+    "PO_line":[
+      "PO\rLine"
+    ],
+    "item_code":[
+      "Item Code"
+    ]
+  }
+}

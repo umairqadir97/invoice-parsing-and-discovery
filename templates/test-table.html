@@ -1,0 +1,28 @@
+<html>
+<body>
+	<table class="table table-bordered match-table" id="purchase-order-table" style="font-size: 0.8rem;"><thead><tr><th>description</th><th>QTY</th><th></th><th>s_no</th><th>PO Line</th><th>Item Code</th><th>Description</th><th>Promise Date</th><th>Unit Price</th></tr></thead><tbody><tr><td><p id="table-text">N/A</p></td><td><p id="table-text">2</p></td><td><p id="table-text"></p></td><td><p id="table-text">1</p></td><td><p id="table-text">5</p></td><td><p id="table-text">07-42-1401025-06</p></td><td><p id="table-text">SEAL: PLATE EPDM SET ONE PLATE F PRESSURE FILTER FPS NP 0002 0007 OUTOTEC FINLAND  LAROX F  MISC SPRES NR F600796 EPDM1 6 17 1401 05 E600090</p></td><td><p id="table-text">nan</p></td><td><p id="table-text">nan</p></td></tr><tr><td><p id="table-text">N/A</p></td><td><p id="table-text">2</p></td><td><p id="table-text"></p></td><td><p id="table-text">2</p></td><td><p id="table-text">4</p></td><td><p id="table-text">07-42-1401111-13</p></td><td><p id="table-text">BELLOWS: PRESSURE FILTER L01157 FG data 15 PF971 6 17 1401</p></td><td><p id="table-text">nan</p></td><td><p id="table-text">nan</p></td></tr><tr><td><p id="table-text">N/A</p></td><td><p id="table-text">2</p></td><td><p id="table-text"></p></td><td><p id="table-text">3</p></td><td><p id="table-text">1</p></td><td><p id="table-text">06-56-2305410-24</p></td><td><p id="table-text">BELLOWS: FLEXIBLE</p></td><td><p id="table-text">14-OCT-2019</p></td><td><p id="table-text">2,500.000</p></td></tr><tr><td><p id="table-text"> item code,                                        p.o. referecne          size mm                                        m/                                         no of 8", matrial acid resistant</p></td><td><p id="table-text">2</p></td><td><p id="table-text"></p></td><td><p id="table-text">4</p></td><td><p id="table-text">2</p></td><td><p id="table-text">06-56-2305410-25</p></td><td><p id="table-text">BELLOWS: FLEXIBLE 8 ACID RESISTANT RBR</p></td><td><p id="table-text">nan</p></td><td><p id="table-text">nan</p></td></tr><tr style="background-color: red"><td><p id="table-text"> item code,                                        p.o. referecne          size mm                                        m/                                         no of 8", matrial acid resistant</p></td><td><p id="table-text">2</p></td><td><p id="table-text"></p></td><td><p id="table-text">5</p></td><td><p id="table-text">3</p></td><td><p id="table-text">06-56-2305410-26</p></td><td><p id="table-text">BELLOWS: FLEXIBLE 4 ACID RESISTANT RBR</p></td><td><p id="table-text">nan</p></td><td><p id="table-text">nan</p></td></tr></tbody></table>
+	</body>
+</html>
+
+<script>
+	// var table = document.getElementById("purchase-order-table");
+	// var rows = table.getElementsByTagName('tr');
+	x = document.getElementById("purchase-order-table").rows.length;
+
+for(i=1;i<x;i++){
+	var tr = document.getElementsByTagName("tr")[i];
+	var tdl = tr.getElementsByTagName("td").length;
+	
+	for(j=0;j<tdl;j++){
+		var td = tr.getElementsByTagName("td")[j];
+		if(td.innerHTML !== '<p id="table-text">N/A</p>') {
+			var table = document.getElementById("purchase-order-table");
+			var rowSelected = table.getElementsByTagName('tr')[i]
+			console.log(rowSelected);
+			rowSelected.style.backgroundColor = 'green';
+			
+		}
+	}
+}
+	
+	</script>
