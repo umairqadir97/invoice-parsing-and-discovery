@@ -53,7 +53,7 @@
 <br>
 
 <a href="https://www.youtube.com/watch?v=iAtMRl2IumY" target="_blank" >
-    <img src="reports/youtube_video_sample.png" alt="Logo" width="512" height="256">
+    <img src="reports/youtube_video_sample.png" alt="Logo" width="1024" height="512">
 </a>
 
 <br>
