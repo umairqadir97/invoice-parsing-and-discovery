@@ -50,13 +50,13 @@
 <!-- [![Product Name Screen Shot][product-main-screenshot]](#about-the-project)
 
 [![Product Name Screen Shot][product-progress-screenshot]](#about-the-project) -->
+<br>
 
-<div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iAtMRl2IumY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=iAtMRl2IumY"><img src="https://img.youtube.com/vi/iAtMRl2IumY/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
-
-
+<br>
 Data-Warehouse related project for fetching, parsing and mapping commercial invoices with relevant delivery-challan & purchase-order. Parsing the Purchase Orders, Delivery Challans & preparing mappings.
 
 
