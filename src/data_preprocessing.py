@@ -4,7 +4,7 @@ import pandas as pd
 import pdfquery
 import json
 import os
-from config import KEYWORDS_FILE
+from src.config import KEYWORDS_FILE
 import time
 try:
     from tabula import read_pdf
@@ -53,6 +53,8 @@ def merge_dataframes(list_of_df, column_header):
     for df in list_of_df:
         if type(df) is not pd.DataFrame:
             continue
+        if df.empty:
+            continue
         if column_header in df.iloc[0, :].values:
             df = df.iloc[1:, ]
         final_df = pd.concat([final_df, df], ignore_index=True, sort=False)
@@ -68,6 +70,10 @@ def get_column_header(pages, filepath):
         if top is None:
             continue
         df = read_pdf(filepath, area=(top, left, bottom, right), pages=page.attrib['pageid'], lattice=True)
+        if type(df[0]) is pd.DataFrame:
+            df = df[0]
+            df = df.dropna(axis=0, how="all")
+
         if type(df) is pd.DataFrame:
             if not df.empty:
                 column_header = df.columns.values
@@ -163,6 +169,7 @@ def parse_single_purchase_order(filepath, filename):
     pages = pdf.tree.findall('LTPage')
     column_header = get_column_header(pages, file)
     cont_flag, desc_start_flag = True, False
+    po_num = ""
     for page in pages:
         po_text = get_text_of_p_o_no(page)
         if po_text:
@@ -172,10 +179,19 @@ def parse_single_purchase_order(filepath, filename):
         top, left, bottom, right, cont_flag, desc_start_flag = get_coordinates_for_description(page, cont_flag, desc_start_flag)
         if top is None:
             continue
-        df = None
-        df = read_pdf(file, area=(top, left, bottom, right), pages=page.attrib['pageid'],
-                      lattice=True, pandas_options={"names": column_header})
-        _list.append(df)
+        df = pd.DataFrame()
+        try:
+            df = read_pdf(file, area=(top, left, bottom, right), pages=page.attrib['pageid'],
+                          lattice=True, pandas_options={"names": list(column_header)})
+
+            if type(df[0]) is pd.DataFrame:
+                df = df[0]
+        except:
+            pass
+
+        if type(df) is pd.DataFrame:
+            _list.append(df)
+
         if not cont_flag:
             break
     print("\n#####   TABULA time for parsing different sections --- %s seconds ---" % (time.time() - start_time))
@@ -183,11 +199,6 @@ def parse_single_purchase_order(filepath, filename):
         "page": filename,
         "data": description_df_to_json(merge_dataframes(_list, column_header), po_num)
         }
-
-    # todo: fix-it
-    # File "/home/umair/redbuffer/invoice_matching_project/development/invoice_matching/src/data_preprocessing.py", line
-    # 184, in parse_single_purchase_order "data": description_df_to_json(merge_dataframes(_list, column_header), po_num)
-    # UnboundLocalError: local variable 'po_num' referenced before assignment
 
     return po_obj
 

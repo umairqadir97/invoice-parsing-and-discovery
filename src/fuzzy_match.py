@@ -63,7 +63,6 @@ def generate_match_object(match_count, dc_filename, po_filename, items_matched, 
         "<a href=\"/dc-download/{dc_name}\">Delivery challan</a>".format(dc_name=dc_filename): dc_items,
         "<a href=\"/po-download/{po_name}\">Purchase order</a>".format(po_name=po_filename): po_items
     }]
-
     print(json.dumps(items))
     obj = {
         'id': match_count,

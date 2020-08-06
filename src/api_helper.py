@@ -3,14 +3,14 @@ import os
 import re
 import time
 from json2html import *
+import traceback
 from zipfile import ZipFile
 import pandas as pd
 from flask import flash, redirect, jsonify, Response, render_template
 from werkzeug.utils import secure_filename
-from config import *
+from src.config import *
 from src import data_preprocessing, fuzzy_match
 from src import process
-from src.fuzzy_match import generate_match_object
 # from src.tesseract_process import excel_to_text
 
 DC_FILENAME = ""   # we need to access it globally !
@@ -46,15 +46,8 @@ def upload_dc_file(request):
             # DC should be in pdf / image format
             DC_FILENAME = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, DC_FILENAME))
-            # match_result, status_code = get_matches_for_dc(dc_filepath=UPLOAD_FOLDER, dc_filename=DC_FILENAME)
-            items_matched = json.load(open('/home/umair/Downloads/test_items_matched.json', 'r'))
-            dc_text_matched = [
-    'Make : Hy-lok Korea. Needle Valve',
-    'Seamless Tube. Model: T10M1.0A269BBS-316L Size : 10 mm OD x 1.0 mm WT., Material : SS 316.'
-]
-
-            match_result = generate_match_object(2, 'Fatima DC # 1659.txt', 'PO-31526.pdf', items_matched, dc_text_matched)
-            return jsonify(match_result), 200
+            match_result, status_code = get_matches_for_dc(dc_filepath=UPLOAD_FOLDER, dc_filename=DC_FILENAME)
+            return jsonify(match_result), status_code
         else:
             return jsonify({"Error": "Invalid File Extension/ Empty File"}), 400
 
@@ -99,6 +92,11 @@ def get_matches_for_dc(dc_filepath, dc_filename, benchmark=False):
 
 
 def add_new_purchase_orders(request):
+    # delete all upoaded that are not in master file
+    if os.listdir(EXTRACTED_PURCHASE_ORDERS_FOLDER):
+        os.popen('rm {}*'.format(EXTRACTED_PURCHASE_ORDERS_FOLDER))
+    po_file = ""
+
     if request.method == 'POST':
         if 'po_file' not in request.files:
             print('No file part')
@@ -142,10 +140,6 @@ def add_new_purchase_orders(request):
                                                                             filepath=EXTRACTED_PURCHASE_ORDERS_FOLDER,
                                                                             filename=po_filename)
 
-                # delete all upoaded that are not in master file
-                # if os.listdir(EXTRACTED_PURCHASE_ORDERS_FOLDER):
-                #     os.popen('rm {}*'.format(EXTRACTED_PURCHASE_ORDERS_FOLDER))
-
                 #
                 # write new data to POs MASTER JSON file !'
                 with open(PURCHASE_ORDERS_JSON, "w") as output_file:
@@ -154,6 +148,8 @@ def add_new_purchase_orders(request):
             else:
                 return jsonify({"Error": "Invalid File Extension"}), 400
         except Exception as e:
+            traceback.print_exc()
+            print(f"ERROR FOR FILE: {po_file}")
             return jsonify({"Error": "Invalid File/ Empty File"}), 400
 
 

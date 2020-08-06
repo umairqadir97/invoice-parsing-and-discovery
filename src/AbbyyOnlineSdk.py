@@ -5,7 +5,7 @@
 import shutil
 import xml.dom.minidom
 
-from config import *
+from src.config import *
 
 try:
 	import requests

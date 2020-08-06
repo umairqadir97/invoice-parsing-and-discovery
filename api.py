@@ -1,6 +1,6 @@
 from flask import *
 from src.api_helper import *
-from config import *
+from src.config import *
 import os
 import time
 
@@ -16,18 +16,19 @@ def home():
     return render_template("tables.html")
 
 
-# Add New Purchase Orders
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_new_purchase_orders():
-    # <upload purchase order> main
-    # Upload bulk/ single Purchase Order
-    # parameter: 'po_file': single Purchase Order PDF/ .zip for multiple
+    """
+    Upload Purchase Orders, duplicates will be replaced.
+    request parameters:
+        @po-file: purchase order file(s). allowed extensions (.pdf, .zip)
+    """
+
     try:
-        import time
         start_time = time.time()
         status_code = 200
         response_object, status_code = add_new_purchase_orders(request)
-        print("\n#####   PO totoal upload & parse time --- %s seconds ---" % (time.time() - start_time))
+        print("\n#####   PO total upload & parse time --- %s seconds ---" % (time.time() - start_time))
         return response_object, status_code
     except Exception as exe:
         import traceback
