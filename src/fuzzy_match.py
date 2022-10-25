@@ -22,10 +22,6 @@ def generate_item_table(response_data, dc_filename, po_filename):
         print(purchase_order)
         print(len(delivery_challan))
         print(len(purchase_order))
-        # header = {}
-        # for k in [match_keys[0],"1", match_keys[1],"2","3", "4", "5"]:
-        #     header[k] = ""
-        # new_response.append(header)
         for i in range(len(delivery_challan)):
             new_response.append(OrderedDict(chain(delivery_challan[i].items(),
                                                   {"": ""}.items(),
@@ -55,9 +51,6 @@ def generate_match_object(match_count, dc_filename, po_filename, items_matched, 
 
         # Add PO items
         po_items.append(items_matched[index])
-        # for key, value in items_matched[index].items():
-        #     po_items[key].append(value)
-        # print(items_matched[index])
 
     items = [{
         "<a href=\"/dc-download/{dc_name}\">Delivery challan</a>".format(dc_name=dc_filename): dc_items,

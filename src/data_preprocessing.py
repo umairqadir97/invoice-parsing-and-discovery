@@ -23,7 +23,6 @@ def get_coordinates_for_description(page, continuation_flag, description_start_f
             if 'description' in x.text.lower().strip():
                 if not top:   # in case 'description' occurs mutiple times !
                     top = height - float(x.attrib['y0']) - 10
-                    # top = height - float(x.attrib['y1'])
                 description_start_flag = True
             if 'Total Firm & Fixed'.lower() in x.text.lower() or 'total amount' in x.text.lower():
                 bottom = height - float(x.attrib['y0'])
@@ -118,14 +117,9 @@ def description_df_to_json(df, po_num):
             for key in header:
                 if key in key_black_list:
                     continue
-                # for black_key in key_black_list:
-                #     if black_key.lower() in key.lower():
-                #         black_listed_key = True
-                # if black_listed_key:
 
                 # todo: test it, export black_list code to function
                 clean_key = key.replace("\r"," ")
-                # print(key,clean_key)
                 if 'sr #' in key.lower():
                     if "total amount" in row[1][key].lower():
                         values = row[1].values
@@ -201,14 +195,3 @@ def parse_single_purchase_order(filepath, filename):
         }
 
     return po_obj
-
-
-# def create_po_json(file_path):
-#     # todo: sanity check, bulk vs single
-#     # PARSE purchase orders and convert to JSON : "po_list"
-#     purchase_orders = [f for f in os.listdir(file_path) if f.endswith('.pdf')]
-#     po_list = []
-#     for file in purchase_orders:
-#         po_list.append()
-#     print("Purchase Orders Parsed . . .")
-#     return po_list

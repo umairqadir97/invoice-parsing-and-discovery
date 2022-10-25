@@ -6,9 +6,6 @@ import numpy as np
 from fuzzywuzzy import process, fuzz
 
 
-# warnings.filterwarnings('ignore')
-
-
 def get_properties(po_item_desc, categories):
     category_text = re.match(r'^(.*?):', po_item_desc)
     if category_text:
@@ -40,10 +37,6 @@ def match_po_single_item_to_dc(po_item, dc):
     properties_matched = []
     dc_matched_text = ''
     for k, v in po_item['Description'].items():
-        # property_value_match = fuzz.partial_token_set_ratio(k + ' ' + v, dc)
-        # if property_value_match > 70:
-        #     properties_matched.append({k: v})
-
         result = process.extractOne(k + ' ' + v, dc, scorer=fuzz.token_set_ratio)
         if result[1] > 60:
             properties_matched.append({k: v})
@@ -52,7 +45,6 @@ def match_po_single_item_to_dc(po_item, dc):
     if len(properties_matched) >= 2:
         return True, properties_matched, dc_matched_text
     else:
-        # if fuzz.token_set_ratio(item_code.lower(), dc) > 85:
         if process.extractOne(item_code.lower(), dc, scorer=fuzz.token_set_ratio)[1] > 85:
             return True, [{'item_code': item_code}], [item_code]
     return False, properties_matched, dc_matched_text

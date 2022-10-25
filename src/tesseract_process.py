@@ -40,10 +40,3 @@ def excel_to_text(input_file, output_file):
     with open(output_file, "w") as out_file:
         out_file.write(text)
     return text
-
-
-# if __name__=='__main__':
-#     input_filepath = '/home/umair/redbuffer/fatima_group_invoices/merged DCs/'
-#     output_filepath = '/home/umair/redbuffer/invoice_matching/data/delivery_challans/'
-#     for _file in os.listdir(input_filepath):
-#         main(input_filepath, _file, output_filepath, _file[:-3]+'txt')
