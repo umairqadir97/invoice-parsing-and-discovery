@@ -11,7 +11,6 @@ from werkzeug.utils import secure_filename
 from src.config import *
 from src import data_preprocessing, fuzzy_match
 from src import process
-# from src.tesseract_process import excel_to_text
 
 DC_FILENAME = ""   # we need to access it globally !
 
@@ -131,7 +130,6 @@ def add_new_purchase_orders(request):
                     # Remove Uploaded .zip after extraction
                     os.remove(UPLOAD_FOLDER + 'new_purchase_orders.zip')
                 elif file.filename.endswith('pdf'):
-                    # if file.filename not in po_data.keys():
                     # last update: Overwrite POs every Time
 
                     po_filename = secure_filename(file.filename)
@@ -140,7 +138,6 @@ def add_new_purchase_orders(request):
                                                                             filepath=EXTRACTED_PURCHASE_ORDERS_FOLDER,
                                                                             filename=po_filename)
 
-                #
                 # write new data to POs MASTER JSON file !'
                 with open(PURCHASE_ORDERS_JSON, "w") as output_file:
                     json.dump(po_data, output_file)
@@ -165,13 +162,11 @@ def benchmark_for_all_pos(input_directory, output_directory, write_to_file=True)
         po_objects[purchase_order] = json.loads(json.dumps(po_obj).replace('\\n', ' ').replace('\\r', ' '))["data"]
 
     if write_to_file:
-        #
         # write final_matches to "updated_matches.json"
         print("\n\nFINAL MATCHES:", final_matches)
         with open(os.path.join(output_directory + MATCHES_OUTPUT_FILES), "w") as output_file:
             json.dump(final_matches, output_file)
 
-        #
         # write po_objects to "updated_purchase_orders.json"
         with open(os.path.join(output_directory + PURCHASE_ORDERS_JSON), 'w') as output_file:
             json.dump(po_objects, output_file)
@@ -226,17 +221,6 @@ def extract_benchmark_stats(final_matches_file, parsed_pos_file, output_director
                                 "Item_Match": 1
                             }
                             items_summary_df = items_summary_df.append(items_summary_row, ignore_index=True)
-
-                # else:
-                #     items_summary_row = {
-                #                 "PO": po,
-                #                 "Item_Code": "None",
-                #                 "Item_Name": "None",
-                #                 "DC_File": dc["delivery_challan"],
-                #                 "DC_Match": 1,
-                #                 "Item_Match": 0
-                #             }
-                #     items_summary_df = items_summary_df.append(items_summary_row, ignore_index=True)
         else:
             row = {"purchase_order": po,
                    "PO#": pos_json[po]['purchase_order'],
